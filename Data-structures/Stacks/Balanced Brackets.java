@@ -9,20 +9,21 @@ public class Solution {
     static String isBalanced(String s) {
         Stack stack = new Stack(s.length());
         for (char c : s.toCharArray()) {
-			if (c == '(' || c == '[' || c == '{') {
-				stack.push(c);
-			} 
-            else {
-				if (stack.isEmpty()) {
-					return "NO";
-				}
-				char top = stack.pop();
-				if (!((c == ')' && top == '(') || (c == ']' && top == '[') || (c == '}' && top == '{'))) {
-					return "NO";
-				}
-			}
+		if (c == '(' || c == '[' || c == '{') 
+			stack.push(c); 
+            	
+		else {
+			if (stack.isEmpty()) 
+				return "NO";
+				
+			char top = stack.pop();
+			
+			if (!((c == ')' && top == '(') || (c == ']' && top == '[') || (c == '}' && top == '{'))) 
+				return "NO";
+				
 		}
-		if(stack.isEmpty())
+	}
+	if(stack.isEmpty())
             return "YES";
         return "NO";
     }
